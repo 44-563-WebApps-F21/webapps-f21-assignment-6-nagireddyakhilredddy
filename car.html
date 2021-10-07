@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+ 
+<body>
+    <title>Car webpage by using HTML with js</title>
+<h1>Akhil Reddy Nagireddy  orders a car</h1>
+<h2>Getting input</h2>
+
+<form>
+    <input type="checkbox" id="electric vehicle" name="vehicle"   
+      value="electric" >
+    <label for="elect">electric</label></br>
+  
+    <input type="checkbox" id="ac vehicle" name="vehicle" 
+       value="ac">
+    <label for="ac">ac</label></br>
+  
+    <input type="checkbox" id="gp vehicle" name="vehicle"   
+       value="gps" >
+    <label for="gp">gps</label></br>
+    <br>
+
+    <input type="button" onclick="orderCar()" value="Order a car">
+  </form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+    var my_car = {} 
+  function orderCar (){
+       var electric =false
+       var a =false
+       var g =false
+      electric = document.getElementById("electric vehicle")
+      ac = document.getElementById("ac vehicle")
+      gps = document.getElementById("gp vehicle")
+     
+      if (electric.checked) {
+          electric=true
+      }
+       if ( ac.checked){
+          a=true
+      }
+      if (gps.checked){
+          g=true
+      }
+      my_car={electric  : electric, ac  : a, gps  : g}
+  
+      out=document.getElementById("result").innerHTML="Car Ordered is : "+JSON.stringify(my_car)
+  }
+  </script>
+  <br>
+  <form>
+    <label for="property">Enter a property</label>
+    <input type ="text" id="property" name="property" min=10 max=50 step=2 value="color"> <br>
+
+    <label for="value">Enter a value</label>
+    <input type ="text" id="value" name="value" autofocus> <br>
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+
+
+<p id="r">This text will be replaced </p>
+<script>
+    function updateCar() {
+        propert=document.getElementById("property").value
+        val=document.getElementById("value").value
+        my_car[propert]=val
+        output=document.getElementById("r").innerHTML=JSON.stringify(my_car)
+    }
+</script>
+</body>
+</html> 

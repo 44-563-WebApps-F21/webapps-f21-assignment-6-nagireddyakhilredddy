@@ -45,5 +45,35 @@ function processPhrase (){
 }
 </script>
 
+<br>
+<div class="container">
+    <img src="panther.jpg"  height="200" width="200" onclick="newImage()" id="image">
+<script>
+        var usingImage=1;
+          function newImage(){
+            
+              switch (usingImage) {
+                  case 1:
+                     document.getElementById("image").src="Giraffe.jpg";
+                      usingImage=2;
+                      break;
+                  case 2:
+                  document.getElementById("image").src="Nurse Shark.jpg";
+                      usingImage=3;
+                      break;
+                  case 3:
+                  document.getElementById("image").src="Anaconda.jpg";
+                      usingImage=4;
+                      break;
+                  default :
+                  document.getElementById("image").src="panther.jpg"
+                  usingImage=1;
+                  break;
+              }
+            }
+</script>
+</div>
+
 </body>
+
 </html> 
